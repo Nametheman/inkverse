@@ -1,4 +1,3 @@
-import React from "react";
 import heroImg from "@/assets/icons/hero.png";
 import { Button } from "../ui/button";
 import { MoveRight } from "lucide-react";
