@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "@/assets/images/logo.png";
 import facebook from "@/assets/icons/facebook.svg";
 import linkedin from "@/assets/icons/linkedin.svg";
@@ -16,17 +15,21 @@ const Footer = () => {
     { icon: youtube, link: "https://www.youtube.com/" },
   ];
   return (
-    <footer className="footer px-[8rem] py-[6rem]">
-      <div className="flex items-start justify-between">
-        <div className="w-[350px]">
-          <img src={logo} alt="logo" />
-          <p className="mt-2">
+    <footer className="footer p-[2rem] md:px-[3rem] lg:px-[8rem] md:py-[6rem]">
+      <div className="flex flex-col gap-10 lg:flex-row lg:gap-0 items-start justify-between">
+        <div className="w-[250px] md:w-[350px]">
+          <img src={logo} alt="logo" className="w-[50px]" />
+          <p className="mt-2 text-sm md:text-base">
             Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat.{" "}
           </p>
           <div className="flex items-center justify-between mt-10">
             {socials.map((link) => (
-              <a href={link.link} key={link.link}>
+              <a
+                href={link.link}
+                key={link.link}
+                className="hover:scale-105 transition-all"
+              >
                 <img src={link.icon} alt="social_logo" className="w-[40px]" />
               </a>
             ))}
@@ -34,7 +37,7 @@ const Footer = () => {
         </div>
         <div className="flex justify-center">
           <div>
-            <h2 className="mb-5 text-accent font-medium">COMPANY</h2>
+            <h2 className="mb-5 text-accent font-bold">COMPANY</h2>
             <div className="space-y-2 text-sm">
               <p>HOME</p>
               <p>ABOUT US</p>
@@ -46,14 +49,14 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="w-[350px]">
-          <h2 className="mb-5 text-accent font-medium">LATEST NEWS</h2>
+        <div className="xl:w-[350px]">
+          <h2 className="mb-5 text-accent font-bold">LATEST NEWS</h2>
           <div></div>
         </div>
       </div>
-      <div className="flex items-center justify-between mt-[7rem]">
-        <p>© 2024 Inkverse. All Rights Reserved.</p>
-        <div className="flex items-center gap-2">
+      <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-center justify-between mt-6 md:mt-[7rem]">
+        <p className="text-sm">© 2024 Emmanuel Owolabi. All Rights Reserved.</p>
+        <div className="flex items-center gap-2 text-sm">
           <p className="text-accent">Privacy</p>
           <p>|</p>
           <p>Terms of Service</p>

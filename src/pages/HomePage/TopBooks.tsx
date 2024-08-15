@@ -10,7 +10,7 @@ const TopBooks = () => {
   });
   console.log(data);
   return (
-    <div className="py-[6rem]">
+    <div className="py-[3rem] lg:py-[6rem]">
       <p className="text-center font-light text-xs text-[#3c3c3c]">
         SOME BOOKS TO CHECK{" "}
       </p>
@@ -18,17 +18,17 @@ const TopBooks = () => {
         Most Read Books
       </p>
       {isFetching ? (
-        <div className="grid grid-cols-4 gap-[6rem] justify-center px-[6rem] mt-[5rem]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-2 gap-y-10 md:gap-[6rem] justify-center px-[2rem] md:px-[6rem] mt-[5rem]">
           {Array.from({ length: 8 }).map((_, index) => (
             <div className="flex justify-center" key={index}>
-              <div className="w-[280px] min-h-[450px] shrink-0 rounded-md bg-gray-100 animate-pulse"></div>
+              <div className="w-full md:w-[280px] min-h-[450px] shrink-0 rounded-md bg-gray-100 animate-pulse"></div>
             </div>
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-4 gap-[6rem] justify-center px-[6rem] mt-[5rem]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-2 gap-y-10 md:gap-[6rem] justify-center px-[2rem] md:px-[6rem] mt-[5rem]">
           {data?.items?.map((book: any) => (
-            <div className="flex justify-center" key={book.id}>
+            <div className="w-full md:flex justify-center" key={book.id}>
               <Book book={book} />
             </div>
           ))}

@@ -12,6 +12,9 @@ InkverseAPI.interceptors.request.use(
   (config) => {
     const key = import.meta.env.VITE_REACT_BOOK_API_KEY;
 
+    if (key) {
+    }
+
     return config;
   },
   (error) => {
