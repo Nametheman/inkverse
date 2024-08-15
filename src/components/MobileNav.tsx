@@ -1,10 +1,4 @@
-import React from "react";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { useMobileNav } from "@/store/useMobileNav";
 import { links } from "./Navbar";
 import { Link } from "react-router-dom";

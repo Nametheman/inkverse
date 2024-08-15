@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSearch } from "@/store/useSearch";
 import Book from "@/components/Book";
 import { searchBooks } from "@/services/home";
@@ -9,7 +9,7 @@ const SearchResults = () => {
   const { search } = useSearch();
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
-  const { data, isLoading, isFetching } = useQuery({
+  const { data, isFetching } = useQuery({
     queryKey: ["searchBooks", search, limit, page],
     queryFn: () => searchBooks(search, limit, page),
   });

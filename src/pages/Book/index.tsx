@@ -1,4 +1,3 @@
-import React from "react";
 import { useBook } from "@/store/useBook";
 import { Button } from "@/components/ui/button";
 import { MoveLeft } from "lucide-react";
