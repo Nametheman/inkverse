@@ -1,26 +1,20 @@
-import React, { useState } from "react";
 import { Button } from "./ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { useBook } from "@/store/useBook";
 import { useNavigate } from "react-router-dom";
+import { useSearch } from "@/store/useSearch";
 
 const Book = ({ book }: any) => {
   const { setBook } = useBook();
+  const { setSearch } = useSearch();
   const navigate = useNavigate();
 
   const viewBookHandler = () => {
+    setSearch("");
     setBook(book);
     navigate("/book");
   };
   return (
-    <div className="shadow bg-white rounded-md w-[280px] min-h-[450px] overflow-hidden shrink-0 relative">
+    <div className="shadow bg-white rounded-md w-full md:w-[280px] min-h-[450px] overflow-hidden shrink-0 relative">
       <img
         src={book?.volumeInfo?.imageLinks?.thumbnail}
         alt="thumbnail"
@@ -52,18 +46,6 @@ const Book = ({ book }: any) => {
           </Button>
         </div>
       </div>
-      {/* <Dialog open={showModal} onOpenChange={setShowModal}>
-        <DialogTrigger>Open</DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Are you absolutely sure?</DialogTitle>
-            <DialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog> */}
     </div>
   );
 };
