@@ -12,10 +12,6 @@ InkverseAPI.interceptors.request.use(
   (config) => {
     const key = import.meta.env.VITE_REACT_BOOK_API_KEY;
 
-    if (token) {
-      config.headers["Authorization"] = `Bearer ${token}`;
-    }
-
     return config;
   },
   (error) => {
